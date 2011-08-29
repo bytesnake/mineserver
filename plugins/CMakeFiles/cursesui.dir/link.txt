@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -W -Wall -Wno-unused -pedantic -DHAVE_TR1_SUBDIR -DDEBUG -g -O0  -shared -Wl,-soname,cursesui.so -o bin/cursesui.so CMakeFiles/cursesui.dir/cursesui/screen.cpp.o -lcurses 

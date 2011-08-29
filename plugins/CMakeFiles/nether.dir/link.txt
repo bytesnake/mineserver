@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -W -Wall -Wno-unused -pedantic -DHAVE_TR1_SUBDIR -DDEBUG -g -O0  -shared -Wl,-soname,nether.so -o bin/nether.so CMakeFiles/nether.dir/nether/nether.cpp.o 

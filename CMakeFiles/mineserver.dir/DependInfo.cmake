@@ -1,0 +1,82 @@
+# The set of languages for which implicit dependencies are needed:
+SET(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+SET(CMAKE_DEPENDS_CHECK_CXX
+  "/home/lorenz/mineserver/src/blocks/basic.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/basic.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/bed.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/bed.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/blockfurnace.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/blockfurnace.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/cake.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/cake.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/chest.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/chest.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/default.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/default.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/door.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/door.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/falling.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/falling.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/fire.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/fire.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/ice.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/ice.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/jackolantern.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/jackolantern.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/ladder.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/ladder.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/leaves.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/leaves.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/liquid.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/liquid.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/note.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/note.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/plant.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/plant.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/pumpkin.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/pumpkin.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/redstone.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/redstone.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/sign.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/sign.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/snow.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/snow.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/stair.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/stair.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/step.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/step.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/tnt.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/tnt.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/torch.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/torch.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/tracks.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/tracks.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/wood.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/wood.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/wool.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/wool.cpp.o"
+  "/home/lorenz/mineserver/src/blocks/workbench.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/blocks/workbench.cpp.o"
+  "/home/lorenz/mineserver/src/chat.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/chat.cpp.o"
+  "/home/lorenz/mineserver/src/cliScreen.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/cliScreen.cpp.o"
+  "/home/lorenz/mineserver/src/config/lexer.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/config/lexer.cpp.o"
+  "/home/lorenz/mineserver/src/config/node.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/config/node.cpp.o"
+  "/home/lorenz/mineserver/src/config/parser.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/config/parser.cpp.o"
+  "/home/lorenz/mineserver/src/config/scanner.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/config/scanner.cpp.o"
+  "/home/lorenz/mineserver/src/constants.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/constants.cpp.o"
+  "/home/lorenz/mineserver/src/furnace.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/furnace.cpp.o"
+  "/home/lorenz/mineserver/src/furnaceManager.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/furnaceManager.cpp.o"
+  "/home/lorenz/mineserver/src/inventory.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/inventory.cpp.o"
+  "/home/lorenz/mineserver/src/items/food.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/items/food.cpp.o"
+  "/home/lorenz/mineserver/src/items/itembasic.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/items/itembasic.cpp.o"
+  "/home/lorenz/mineserver/src/items/projectile.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/items/projectile.cpp.o"
+  "/home/lorenz/mineserver/src/lighting.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/lighting.cpp.o"
+  "/home/lorenz/mineserver/src/logger.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/logger.cpp.o"
+  "/home/lorenz/mineserver/src/map.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/map.cpp.o"
+  "/home/lorenz/mineserver/src/mcregion.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/mcregion.cpp.o"
+  "/home/lorenz/mineserver/src/metadata.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/metadata.cpp.o"
+  "/home/lorenz/mineserver/src/mineserver.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/mineserver.cpp.o"
+  "/home/lorenz/mineserver/src/mob.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/mob.cpp.o"
+  "/home/lorenz/mineserver/src/nbt.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/nbt.cpp.o"
+  "/home/lorenz/mineserver/src/packets.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/packets.cpp.o"
+  "/home/lorenz/mineserver/src/physics.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/physics.cpp.o"
+  "/home/lorenz/mineserver/src/plugin.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/plugin.cpp.o"
+  "/home/lorenz/mineserver/src/plugin_api.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/plugin_api.cpp.o"
+  "/home/lorenz/mineserver/src/random.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/random.cpp.o"
+  "/home/lorenz/mineserver/src/screenBase.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/screenBase.cpp.o"
+  "/home/lorenz/mineserver/src/sockets.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/sockets.cpp.o"
+  "/home/lorenz/mineserver/src/tools.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/tools.cpp.o"
+  "/home/lorenz/mineserver/src/tree.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/tree.cpp.o"
+  "/home/lorenz/mineserver/src/user.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/user.cpp.o"
+  "/home/lorenz/mineserver/src/worldgen/biomegen.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/worldgen/biomegen.cpp.o"
+  "/home/lorenz/mineserver/src/worldgen/cavegen.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/worldgen/cavegen.cpp.o"
+  "/home/lorenz/mineserver/src/worldgen/eximgen.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/worldgen/eximgen.cpp.o"
+  "/home/lorenz/mineserver/src/worldgen/heavengen.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/worldgen/heavengen.cpp.o"
+  "/home/lorenz/mineserver/src/worldgen/mapgen.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/worldgen/mapgen.cpp.o"
+  "/home/lorenz/mineserver/src/worldgen/nethergen.cpp" "/home/lorenz/mineserver/CMakeFiles/mineserver.dir/src/worldgen/nethergen.cpp.o"
+  )
+SET(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+SET(CMAKE_TARGET_DEFINITIONS
+  "LIBNOISE"
+  )
+
+# Targets to which this target links.
+SET(CMAKE_TARGET_LINKED_INFO_FILES
+  )

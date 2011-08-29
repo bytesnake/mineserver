@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -W -Wall -Wno-unused -pedantic -DHAVE_TR1_SUBDIR -DDEBUG -g -O0  -shared -Wl,-soname,binlog.so -o bin/binlog.so CMakeFiles/binlog.dir/binlog/binlog.cpp.o 

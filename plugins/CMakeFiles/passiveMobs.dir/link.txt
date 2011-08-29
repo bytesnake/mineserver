@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -W -Wall -Wno-unused -pedantic -DHAVE_TR1_SUBDIR -DDEBUG -g -O0  -shared -Wl,-soname,passiveMobs.so -o bin/passiveMobs.so CMakeFiles/passiveMobs.dir/passiveMobs/passiveMobs.cpp.o 

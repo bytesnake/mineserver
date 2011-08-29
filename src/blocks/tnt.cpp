@@ -49,6 +49,11 @@ void BlockTNT::rb(int32_t x,int8_t y,int8_t z,int map, User* user)
   {
     return;
   }
+  else if(block == BLOCK_TNT) {
+    //explode the tnt in the near
+    explode(user, x, y, z, map);
+    LOG2(INFO, "explode");
+  }
   else
   {
     Mineserver::get()->map(map)->setBlock(x,y,z,0,0);
@@ -152,7 +157,11 @@ void BlockTNT::explode(User* user,int32_t x,int8_t y,int8_t z,int map)
       rb(x-number,y,z+3,map,user);
       rb(x-number,y,z+2,map,user);
       rb(x-number,y,z+1,map,user);
-      rb(x-number,y,z,map,user);
+      if(number == 0) {
+	Mineserver::get()->map(map)->setBlock(x,y,z,0,0);
+        Mineserver::get()->map(map)->sendBlockChange(x,y,z,0,0);
+	}
+      else rb(x-number,y,z,map,user);
       rb(x-number,y,z-1,map,user);
       rb(x-number,y,z-2,map,user);
       rb(x-number,y,z-3,map,user);

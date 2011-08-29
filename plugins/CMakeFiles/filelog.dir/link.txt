@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -W -Wall -Wno-unused -pedantic -DHAVE_TR1_SUBDIR -DDEBUG -g -O0  -shared -Wl,-soname,filelog.so -o bin/filelog.so CMakeFiles/filelog.dir/filelog/filelog.cpp.o 

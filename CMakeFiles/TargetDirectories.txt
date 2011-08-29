@@ -1,0 +1,10 @@
+/home/lorenz/mineserver/plugins/CMakeFiles/binlog.dir
+/home/lorenz/mineserver/plugins/CMakeFiles/commands.dir
+/home/lorenz/mineserver/plugins/CMakeFiles/crapMobs.dir
+/home/lorenz/mineserver/plugins/CMakeFiles/cursesui.dir
+/home/lorenz/mineserver/plugins/CMakeFiles/filelog.dir
+/home/lorenz/mineserver/plugins/CMakeFiles/flatpermissions.dir
+/home/lorenz/mineserver/CMakeFiles/mineserver.dir
+/home/lorenz/mineserver/plugins/CMakeFiles/nBreak.dir
+/home/lorenz/mineserver/plugins/CMakeFiles/nether.dir
+/home/lorenz/mineserver/plugins/CMakeFiles/passiveMobs.dir

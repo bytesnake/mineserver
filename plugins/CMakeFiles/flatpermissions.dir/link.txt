@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -W -Wall -Wno-unused -pedantic -DHAVE_TR1_SUBDIR -DDEBUG -g -O0  -shared -Wl,-soname,flatpermissions.so -o bin/flatpermissions.so CMakeFiles/flatpermissions.dir/flatpermissions/flatpermissions.cpp.o 

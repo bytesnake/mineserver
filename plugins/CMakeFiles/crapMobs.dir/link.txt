@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -W -Wall -Wno-unused -pedantic -DHAVE_TR1_SUBDIR -DDEBUG -g -O0  -shared -Wl,-soname,crapMobs.so -o bin/crapMobs.so CMakeFiles/crapMobs.dir/crapMobs/crapMobs.cpp.o 
