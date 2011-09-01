@@ -29,19 +29,24 @@
 #define _PHYSICS_H
 
 #include <stdint.h>
+#include <set>
 #include <vector>
 #include "vec.h"
+#include "mineserver.h"
 
 class Physics
 {
 public:
   bool enabled;
   int map; // Which map are we affecting?
+	clock_t lasttime;
 
   bool update();
   bool addSimulation(vec pos);
   bool removeSimulation(vec pos);
   bool checkSurrounding(vec pos);
+	void getBlocksAround(vec pos, vec vectors[], uint8_t around[5][2]);
+	bool updateFluid(uint32_t simIt);
 
 private:
   enum { TYPE_WATER, TYPE_LAVA } SimType;
@@ -52,12 +57,14 @@ private:
     uint8_t id;
     vec pos;
     uint8_t meta;
+		bool render;
     SimBlock() {}
-    SimBlock(uint8_t id, vec pos, uint8_t meta)
+    SimBlock(uint8_t id, vec pos, uint8_t meta, bool render)
     {
       this->id   = id;
       this->pos  = pos;
       this->meta = meta;
+			this->render = render;
     }
   };
 

@@ -31,6 +31,7 @@
 #include "constants.h"
 #include "mineserver.h"
 #include "map.h"
+#include <sstream>
 
 namespace
 {
@@ -54,12 +55,80 @@ inline bool mayFallThrough(int id)
 {
   return ((id == BLOCK_AIR) || (id == BLOCK_WATER) || (id == BLOCK_STATIONARY_WATER) || (id == BLOCK_SNOW));
 }
-
 }
+void Physics::getBlocksAround(vec pos, vec vectors[], uint8_t around[5][2]) 
+{
+	vec tmpVectors[6] = {vec(0, -1, 0), vec(1, 0, 0), vec(-1, 0, 0), vec(0, 0, 1), vec(0, 0, -1), vec(0, 1, 0)}; 
+	for (int i = 0; i < 6; i++)
+	{
+		vectors[i] = pos + tmpVectors[i];
+		Mineserver::get()->map(map)->getBlock(vectors[i], &around[i][0], &around[i][1]);
+	}
+}		
+bool Physics::updateFluid(uint32_t simIt) 
+{
+	//Get Pos    
+	vec pos = simList[simIt].blocks[0].pos;
+	//Render the block?
+	bool render = simList[simIt].blocks[0].render;
+	//Meta -> High of water    
+	uint8_t block, meta;
+   Mineserver::get()->map(map)->getBlock(pos, &block, &meta);
+	
+	if(render)
+	{
+		uint8_t around[5][2];
+		vec vectors[6];
+		getBlocksAround(pos, vectors, around);
+		//If there nothing water higher than self, delete
+		if(meta > 0 && !((around[1][0] == block && around[1][1] < meta ) || (around[2][0] == block && around[2][1] < meta) || (around[3][0] == block && around[3][1] < meta) || (around[4][0] == block && around[4][1] < meta) || (around[5][0] == block && around[5][1] < 8 ))) 
+			{
+			removeSimulation(pos);
+			Mineserver::get()->map(map)->setBlock(pos, BLOCK_AIR, 0);
 
+			for(int i = 0; i < 5; i ++) 
+			{
+				addSimulation(vectors[i]);
+			}
+		}
+		//else if(meta == 1 && (((around[1][0] == block && around[1][1] == 0 ) && (around[3][0] == block && around[3][1] == 0)) || 										 ((around[2][0] == block && around[2][1] == 0 ) && (around[4][0] == block && around[4][1] == 0)) ||
+										 //((around[1][0] == block && around[1][1] == 0 ) && (around[2][0] == block && around[2][1] == 0)) ||
+										 //((around[3][0] == block && around[3][1] == 0 ) && (around[4][0] == block && around[4][1] == 0)) ||
+										 //((around[1][0] == block && around[1][1] == 0 ) && (around[4][0] == block && around[4][1] == 0)) ||
+										 //((around[2][0] == block && around[2][1] == 0 ) && (around[3][0] == block && around[3][1] == 0)) ||
+										//around[5][0] == block && around[5][1] == 1 ))) 
+		//{
+			//Mineserver::get()->map(map)->setBlock(pos, block , 0);
+		//}
+		//Try to flow down
+		else if(around[0][0] == BLOCK_AIR) 
+		{
+			Mineserver::get()->map(map)->setBlock(vectors[0], block, 1);
+			addSimulation(vectors[0]);		
+		}
+		//Try to flow site
+		else if(meta < 7 && around[0][0] != block && around[0][0] != block && (around[1][0] == BLOCK_AIR || around[2][0] == BLOCK_AIR || around[3][0] == BLOCK_AIR || around[4][0] == BLOCK_AIR)) 
+		{					
+			for (int i = 1; i < 5; i++)
+			{
+				if(around[i][0] == BLOCK_AIR) 
+				{
+					Mineserver::get()->map(map)->setBlock(vectors[i], block , meta + 1);
+					addSimulation(vectors[i]);
+				}	
+			}
+		}	
+		//Nothing to do, dont rendering
+		else 
+		{
+			simList[simIt].blocks[0].render = false;
+		}
+	}
+}
 // Physics loop
 bool Physics::update()
 {
+	
   if (!enabled)
   {
     return true;
@@ -71,11 +140,10 @@ bool Physics::update()
     return true;
   }
 
-  std::vector<vec> toAdd;
-  std::vector<vec> toRem;
   std::set<vec> changed;
 
-  clock_t starttime = clock();
+	//if(this->lasttime == NULL) this->lasttime = 0;
+  clock_t diffTime = clock() - lasttime;
 
   LOG(INFO, "Physics", "Simulating " + dtos(simList.size()) + " items!");
 
@@ -83,175 +151,41 @@ bool Physics::update()
 
   for (uint32_t simIt = 0; simIt < listSize; simIt++)
   {
-    vec pos = simList[simIt].blocks[0].pos;
-    // Blocks
-    uint8_t block, meta;
+		//Get Pos    
+		vec pos = simList[simIt].blocks[0].pos;
+		//Render the block?
+		bool render = simList[simIt].blocks[0].render;
+		//Meta -> High of water    
+		uint8_t block, meta;
     Mineserver::get()->map(map)->getBlock(pos, &block, &meta);
-    simList[simIt].blocks[0].id   = block;
-    simList[simIt].blocks[0].meta = meta;
 
-    bool used = false;
-    for (int i = 0; i < 5; i++)
+    if (!isLiquidBlock(block))
     {
-      vec local(pos);
-      bool falling = false;
-      switch (i)
-      {
-      case 0:
-        local += vec(0, -1, 0); // First tries to go down
-        falling = true;
-        break;
-      case 1:
-        local += vec(1, 0, 0); // Might be bad to have the 4 cardinal dir'
-        // so predictable
-        break;
-      case 2:
-        local += vec(-1, 0, 0);
-        break;
-      case 3:
-        local += vec(0, 0, 1);
-        break;
-      case 4:
-        local += vec(0, 0, -1);
-        break;
-      case 5:
-        //        local += vec(0,1,0); // Going UP
-        break;
-      }
-      uint8_t newblock, newmeta;
-      Mineserver::get()->map(map)->getBlock(pos, &block, &meta);
-      Mineserver::get()->map(map)->getBlock(local, &newblock, &newmeta);
-      if (!isLiquidBlock(block))
-      {
-        toRem.push_back(pos);
-        break;
-      }
-      if ((isWaterBlock(newblock) && isWaterBlock(block)) || (isLavaBlock(newblock) && isLavaBlock(block)) || (isLiquidBlock(block) && mayFallThrough(newblock)))
-      {
-        if (falling && !isLiquidBlock(newblock))
-        {
-          Mineserver::get()->map(map)->setBlock(local, block, meta);
-          changed.insert(local);
-          Mineserver::get()->map(map)->setBlock(pos, BLOCK_AIR, 0);
-          changed.insert(pos);
-          toRem.push_back(pos);
-          toAdd.push_back(local);
-          used = true;
-          continue;
-        }
-        if (falling && isLiquidBlock(newblock))
-        {
-          int top = 8 - meta;
-          int bot = 8 - newmeta;
-          int volume = top + bot;
-          if (volume > 8)
-          {
-            top = volume - 8;
-            bot = 8;
-          }
-          else
-          {
-            top = 0;
-            bot = volume;
-          }
-          int a_meta = 8 - top;
-          int a_newmeta = 8 - bot;
-          toAdd.push_back(local);
-          if (a_meta == meta && a_newmeta == newmeta)
-          {
-            toRem.push_back(pos);
-            toRem.push_back(local);
-            continue;
-          }
-          if ((isWaterBlock(block) && a_meta < 8) || (isLavaBlock(block) && a_meta < 4))
-          {
-            Mineserver::get()->map(map)->setBlock(pos, block, a_meta);
+			LOG(INFO, "WATER", "Remove block");
+      removeSimulation(pos);
 
-            changed.insert(pos);
-          }
-          else
-          {
-            Mineserver::get()->map(map)->setBlock(pos, BLOCK_AIR, 0);
-            changed.insert(pos);
-          }
-          Mineserver::get()->map(map)->setBlock(local, block, a_newmeta);
-          used = true;
-          toAdd.push_back(local);
-          toAdd.push_back(pos);
-          changed.insert(pos);
-          continue;
-        }
+			uint8_t around[5][2];
+			vec vectors[6];
+			getBlocksAround(pos, vectors, around);
+			for(int i = 0; i < 5; i ++) 
+			{
+				addSimulation(vectors[i]);
+			}
+      break;
+    }
+		if(isWaterBlock(block) || diffTime > 4000)
+		{
+			updateFluid(simIt);
+			changed.insert(pos);
+		}
+  }	
 
-        if (!isLiquidBlock(newblock))
-        {
-          if (!falling)
-          {
-            if ((isWaterBlock(block) && meta == 7) || (isLavaBlock(block) && meta >= 3))
-            {
-              toRem.push_back(pos);
-              break;
-            }
-          }
-          // We are spreading onto dry area.
-          newmeta = 7;
-          Mineserver::get()->map(map)->setBlock(local, block, newmeta);
-          changed.insert(local);
-          meta++;
-          if (meta < 8)
-          {
-            Mineserver::get()->map(map)->setBlock(pos, block, meta);
-            changed.insert(pos);
-          }
-          else
-          {
-            Mineserver::get()->map(map)->setBlock(pos, BLOCK_AIR, 0);
-            changed.insert(pos);
-            toRem.push_back(pos);
-          }
-          toAdd.push_back(local);
-          used = true;
-          continue;
-        }
-        if (meta < newmeta - 1 || (meta == newmeta && falling))
-        {
-          newmeta --;
-          Mineserver::get()->map(map)->setBlock(local, block, newmeta);
-          changed.insert(local);
-          meta ++;
-          if (meta < 8)
-          {
-            Mineserver::get()->map(map)->setBlock(pos, block, meta);
-            changed.insert(pos);
-          }
-          else
-          {
-            Mineserver::get()->map(map)->setBlock(pos, BLOCK_AIR, 0);
-            changed.insert(pos);
-            toRem.push_back(pos);
-          }
-          toAdd.push_back(local);
-          used = true;
-          continue;
-        }
-      }
-    }
-    if (!used)
-    {
-      toRem.push_back(pos);
-    }
-  }
-  for (int i = int(toRem.size()) - 1; i >= 0; i--)
-  {
-    removeSimulation(toRem[i]);
-  }
-  for (size_t i = 0; i < toAdd.size(); i++)
-  {
-    addSimulation(toAdd[i]);
-  }
   Mineserver::get()->map(map)->sendMultiBlocks(changed);
 
-  clock_t endtime = clock() - starttime;
+	lasttime = clock();
+  //clock_t endtime = clock() - starttime;
   //  LOG(INFO, "Physics", "Exit simulation, took " + dtos(endtime * 1000 / CLOCKS_PER_SEC) + " ms, " + dtos(simList.size()) + " items left");
+	
   return true;
 }
 
@@ -266,19 +200,20 @@ bool Physics::addSimulation(vec pos)
   uint8_t block;
   uint8_t meta;
   Mineserver::get()->map(map)->getBlock(pos, &block, &meta);
-  SimBlock simulationBlock(block, pos, meta);
 
   // Dont add duplicates
   for (std::vector<Sim>::iterator simIt = simList.begin(); simIt != simList.end(); simIt++)
   {
     vec itpos = simIt->blocks[0].pos;
+
     if (itpos.x() == pos.x() && itpos.y() == pos.y() && itpos.z() == pos.z())
     {
+			simIt->blocks[0].render = true;
       return true;
     }
   }
 
-
+	  SimBlock simulationBlock(block, pos, meta, true);
   // Simulating water
   if (isWaterBlock(block))
   {

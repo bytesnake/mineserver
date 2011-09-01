@@ -883,7 +883,7 @@ void setwarp(std::string user, std::string command, std::deque<std::string> args
   {
     double x,y,z;
     float w;
-    mineserver->user.getPosition(user.c_str(), &x,&y,&z, &w, NULL,NULL,NULL);
+    mineserver->user.getPosition(user.c_str(), &x,&y,&z, NULL,NULL,NULL);
     
     //try to del same entries
     std::string warps = delwarp(args[0]); 
