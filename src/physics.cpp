@@ -55,8 +55,12 @@ inline bool mayFallThrough(int id)
 {
   return ((id == BLOCK_AIR) || (id == BLOCK_WATER) || (id == BLOCK_STATIONARY_WATER) || (id == BLOCK_SNOW));
 }
+inline bool isRedstone(int id)
+{
+  return ((id == 331) || (id == 75) || (id == 76));
+} 
 }
-void Physics::getBlocksAround(vec pos, vec vectors[], uint8_t around[5][2]) 
+void Physics::getBlocksAround(vec pos, vec vectors[], uint8_t around[6][2]) 
 {
 	vec tmpVectors[6] = {vec(0, -1, 0), vec(1, 0, 0), vec(-1, 0, 0), vec(0, 0, 1), vec(0, 0, -1), vec(0, 1, 0)}; 
 	for (int i = 0; i < 6; i++)
@@ -77,7 +81,7 @@ bool Physics::updateFluid(uint32_t simIt)
 	
 	if(render)
 	{
-		uint8_t around[5][2];
+		uint8_t around[6][2];
 		vec vectors[6];
 		getBlocksAround(pos, vectors, around);
 		//If there nothing water higher than self, delete
@@ -125,6 +129,44 @@ bool Physics::updateFluid(uint32_t simIt)
 		}
 	}
 }
+
+bool Physics::updateRedstone(uint32_t simIt)
+{
+  //Get Pos    
+  vec pos = simList[simIt].blocks[0].pos;
+  //Render the block?
+  bool render = simList[simIt].blocks[0].render;
+  //Meta -> High of water    
+  uint8_t block, meta;
+  Mineserver::get()->map(map)->getBlock(pos, &block, &meta);
+
+  if(render)
+  {
+    uint8_t around[6][2];
+    vec vectors[6];
+    getBlocksAround(pos, vectors, around);
+    for( int i = 0; i < 6; i++) 
+    {
+      if( block == 76 && around[i][0] == 331 ) 
+      {
+        Mineserver::get()->map(map)->setBlock(vectors[i], 331, 15);
+        addSimulation(vectors[i]);
+      }
+      else if( meta > 0 && block == 331 && around[i][0] == 331 )
+      {
+        Mineserver::get()->map(map)->setBlock(vectors[i], 331, meta -1);
+        addSimulation(vectors[i]);
+      }
+      else if( meta > 0 && block == 331 && around[i][0] == 75 )
+      {
+        Mineserver::get()->map(map)->setBlock(vectors[i], 76, around[i][0]);
+        addSimulation(vectors[i]);
+      }
+    } 
+
+  }
+}
+
 // Physics loop
 bool Physics::update()
 {
@@ -155,34 +197,38 @@ bool Physics::update()
 		vec pos = simList[simIt].blocks[0].pos;
 		//Render the block?
 		bool render = simList[simIt].blocks[0].render;
-		//Meta -> High of water    
+		//Meta -> High of water(0-7), State of redstone (15-0)     
 		uint8_t block, meta;
     Mineserver::get()->map(map)->getBlock(pos, &block, &meta);
 
-    if (!isLiquidBlock(block))
+    if(isWaterBlock(block) || (isLavaBlock(block) && diffTime > 4000))
     {
-			LOG(INFO, "WATER", "Remove block");
+      updateFluid(simIt);
+      changed.insert(pos);
+    }
+    else if(isRedstone(block))
+    {
+      updateRedstone(simIt);
+      changed.insert(pos);
+    }
+    else
+   {
       removeSimulation(pos);
 
-			uint8_t around[5][2];
-			vec vectors[6];
-			getBlocksAround(pos, vectors, around);
-			for(int i = 0; i < 5; i ++) 
-			{
-				addSimulation(vectors[i]);
-			}
+      uint8_t around[6][2];
+      vec vectors[6];
+      getBlocksAround(pos, vectors, around);
+      for(int i = 0; i < 5; i ++)
+      {
+        addSimulation(vectors[i]);
+      }
       break;
-    }
-		if(isWaterBlock(block) || diffTime > 4000)
-		{
-			updateFluid(simIt);
-			changed.insert(pos);
-		}
-  }	
+   }
+  }
 
   Mineserver::get()->map(map)->sendMultiBlocks(changed);
-
-	lasttime = clock();
+  lasttime = clock();
+  
   //clock_t endtime = clock() - starttime;
   //  LOG(INFO, "Physics", "Exit simulation, took " + dtos(endtime * 1000 / CLOCKS_PER_SEC) + " ms, " + dtos(simList.size()) + " items left");
 	

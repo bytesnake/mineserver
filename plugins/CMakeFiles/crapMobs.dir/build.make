@@ -31,6 +31,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/lorenz/mineserver
 
@@ -68,7 +71,6 @@ plugins/CMakeFiles/crapMobs.dir/crapMobs/crapMobs.cpp.o.provides: plugins/CMakeF
 .PHONY : plugins/CMakeFiles/crapMobs.dir/crapMobs/crapMobs.cpp.o.provides
 
 plugins/CMakeFiles/crapMobs.dir/crapMobs/crapMobs.cpp.o.provides.build: plugins/CMakeFiles/crapMobs.dir/crapMobs/crapMobs.cpp.o
-.PHONY : plugins/CMakeFiles/crapMobs.dir/crapMobs/crapMobs.cpp.o.provides.build
 
 # Object files for target crapMobs
 crapMobs_OBJECTS = \

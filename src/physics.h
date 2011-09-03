@@ -45,8 +45,10 @@ public:
   bool addSimulation(vec pos);
   bool removeSimulation(vec pos);
   bool checkSurrounding(vec pos);
-	void getBlocksAround(vec pos, vec vectors[], uint8_t around[5][2]);
-	bool updateFluid(uint32_t simIt);
+  void getBlocksAround(vec pos, vec vectors[], uint8_t around[5][2]);
+  bool updateFluid(uint32_t simIt);
+  bool updateRedstone(uint32_t simIt);
+
 
 private:
   enum { TYPE_WATER, TYPE_LAVA } SimType;

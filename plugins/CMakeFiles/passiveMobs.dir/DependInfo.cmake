@@ -10,7 +10,6 @@ SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 SET(CMAKE_TARGET_DEFINITIONS
-  "LIBNOISE"
   "FADOR_PLUGIN=1"
   )
 

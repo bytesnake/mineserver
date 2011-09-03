@@ -31,6 +31,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/lorenz/mineserver
 
@@ -68,7 +71,6 @@ plugins/CMakeFiles/nether.dir/nether/nether.cpp.o.provides: plugins/CMakeFiles/n
 .PHONY : plugins/CMakeFiles/nether.dir/nether/nether.cpp.o.provides
 
 plugins/CMakeFiles/nether.dir/nether/nether.cpp.o.provides.build: plugins/CMakeFiles/nether.dir/nether/nether.cpp.o
-.PHONY : plugins/CMakeFiles/nether.dir/nether/nether.cpp.o.provides.build
 
 # Object files for target nether
 nether_OBJECTS = \

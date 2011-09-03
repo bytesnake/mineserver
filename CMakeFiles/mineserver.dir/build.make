@@ -31,6 +31,9 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
+# The program to use to edit the cache.
+CMAKE_EDIT_COMMAND = /usr/bin/ccmake
+
 # The top-level source directory on which CMake was run.
 CMAKE_SOURCE_DIR = /home/lorenz/mineserver
 
@@ -68,7 +71,6 @@ CMakeFiles/mineserver.dir/src/lighting.cpp.o.provides: CMakeFiles/mineserver.dir
 .PHONY : CMakeFiles/mineserver.dir/src/lighting.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/lighting.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/lighting.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/lighting.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/logger.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/logger.cpp.o: src/logger.cpp
@@ -92,7 +94,6 @@ CMakeFiles/mineserver.dir/src/logger.cpp.o.provides: CMakeFiles/mineserver.dir/s
 .PHONY : CMakeFiles/mineserver.dir/src/logger.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/logger.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/logger.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/logger.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/furnace.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/furnace.cpp.o: src/furnace.cpp
@@ -116,7 +117,6 @@ CMakeFiles/mineserver.dir/src/furnace.cpp.o.provides: CMakeFiles/mineserver.dir/
 .PHONY : CMakeFiles/mineserver.dir/src/furnace.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/furnace.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/furnace.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/furnace.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/plugin_api.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/plugin_api.cpp.o: src/plugin_api.cpp
@@ -140,7 +140,6 @@ CMakeFiles/mineserver.dir/src/plugin_api.cpp.o.provides: CMakeFiles/mineserver.d
 .PHONY : CMakeFiles/mineserver.dir/src/plugin_api.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/plugin_api.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/plugin_api.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/plugin_api.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/constants.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/constants.cpp.o: src/constants.cpp
@@ -164,7 +163,6 @@ CMakeFiles/mineserver.dir/src/constants.cpp.o.provides: CMakeFiles/mineserver.di
 .PHONY : CMakeFiles/mineserver.dir/src/constants.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/constants.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/constants.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/constants.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/map.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/map.cpp.o: src/map.cpp
@@ -188,7 +186,6 @@ CMakeFiles/mineserver.dir/src/map.cpp.o.provides: CMakeFiles/mineserver.dir/src/
 .PHONY : CMakeFiles/mineserver.dir/src/map.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/map.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/map.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/map.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/mineserver.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/mineserver.cpp.o: src/mineserver.cpp
@@ -212,7 +209,6 @@ CMakeFiles/mineserver.dir/src/mineserver.cpp.o.provides: CMakeFiles/mineserver.d
 .PHONY : CMakeFiles/mineserver.dir/src/mineserver.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/mineserver.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/mineserver.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/mineserver.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/furnaceManager.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/furnaceManager.cpp.o: src/furnaceManager.cpp
@@ -236,7 +232,6 @@ CMakeFiles/mineserver.dir/src/furnaceManager.cpp.o.provides: CMakeFiles/mineserv
 .PHONY : CMakeFiles/mineserver.dir/src/furnaceManager.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/furnaceManager.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/furnaceManager.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/furnaceManager.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/screenBase.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/screenBase.cpp.o: src/screenBase.cpp
@@ -260,7 +255,6 @@ CMakeFiles/mineserver.dir/src/screenBase.cpp.o.provides: CMakeFiles/mineserver.d
 .PHONY : CMakeFiles/mineserver.dir/src/screenBase.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/screenBase.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/screenBase.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/screenBase.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/inventory.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/inventory.cpp.o: src/inventory.cpp
@@ -284,7 +278,6 @@ CMakeFiles/mineserver.dir/src/inventory.cpp.o.provides: CMakeFiles/mineserver.di
 .PHONY : CMakeFiles/mineserver.dir/src/inventory.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/inventory.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/inventory.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/inventory.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/packets.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/packets.cpp.o: src/packets.cpp
@@ -308,7 +301,6 @@ CMakeFiles/mineserver.dir/src/packets.cpp.o.provides: CMakeFiles/mineserver.dir/
 .PHONY : CMakeFiles/mineserver.dir/src/packets.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/packets.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/packets.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/packets.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/plugin.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/plugin.cpp.o: src/plugin.cpp
@@ -332,7 +324,6 @@ CMakeFiles/mineserver.dir/src/plugin.cpp.o.provides: CMakeFiles/mineserver.dir/s
 .PHONY : CMakeFiles/mineserver.dir/src/plugin.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/plugin.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/plugin.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/plugin.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/nbt.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/nbt.cpp.o: src/nbt.cpp
@@ -356,7 +347,6 @@ CMakeFiles/mineserver.dir/src/nbt.cpp.o.provides: CMakeFiles/mineserver.dir/src/
 .PHONY : CMakeFiles/mineserver.dir/src/nbt.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/nbt.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/nbt.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/nbt.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/user.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/user.cpp.o: src/user.cpp
@@ -380,7 +370,6 @@ CMakeFiles/mineserver.dir/src/user.cpp.o.provides: CMakeFiles/mineserver.dir/src
 .PHONY : CMakeFiles/mineserver.dir/src/user.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/user.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/user.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/user.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/random.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/random.cpp.o: src/random.cpp
@@ -404,7 +393,6 @@ CMakeFiles/mineserver.dir/src/random.cpp.o.provides: CMakeFiles/mineserver.dir/s
 .PHONY : CMakeFiles/mineserver.dir/src/random.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/random.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/random.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/random.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/config/lexer.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/config/lexer.cpp.o: src/config/lexer.cpp
@@ -428,7 +416,6 @@ CMakeFiles/mineserver.dir/src/config/lexer.cpp.o.provides: CMakeFiles/mineserver
 .PHONY : CMakeFiles/mineserver.dir/src/config/lexer.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/config/lexer.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/config/lexer.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/config/lexer.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/config/scanner.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/config/scanner.cpp.o: src/config/scanner.cpp
@@ -452,7 +439,6 @@ CMakeFiles/mineserver.dir/src/config/scanner.cpp.o.provides: CMakeFiles/mineserv
 .PHONY : CMakeFiles/mineserver.dir/src/config/scanner.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/config/scanner.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/config/scanner.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/config/scanner.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/config/parser.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/config/parser.cpp.o: src/config/parser.cpp
@@ -476,7 +462,6 @@ CMakeFiles/mineserver.dir/src/config/parser.cpp.o.provides: CMakeFiles/mineserve
 .PHONY : CMakeFiles/mineserver.dir/src/config/parser.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/config/parser.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/config/parser.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/config/parser.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/config/node.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/config/node.cpp.o: src/config/node.cpp
@@ -500,7 +485,6 @@ CMakeFiles/mineserver.dir/src/config/node.cpp.o.provides: CMakeFiles/mineserver.
 .PHONY : CMakeFiles/mineserver.dir/src/config/node.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/config/node.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/config/node.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/config/node.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/sockets.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/sockets.cpp.o: src/sockets.cpp
@@ -524,7 +508,6 @@ CMakeFiles/mineserver.dir/src/sockets.cpp.o.provides: CMakeFiles/mineserver.dir/
 .PHONY : CMakeFiles/mineserver.dir/src/sockets.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/sockets.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/sockets.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/sockets.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/chat.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/chat.cpp.o: src/chat.cpp
@@ -548,7 +531,6 @@ CMakeFiles/mineserver.dir/src/chat.cpp.o.provides: CMakeFiles/mineserver.dir/src
 .PHONY : CMakeFiles/mineserver.dir/src/chat.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/chat.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/chat.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/chat.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/tree.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/tree.cpp.o: src/tree.cpp
@@ -572,7 +554,6 @@ CMakeFiles/mineserver.dir/src/tree.cpp.o.provides: CMakeFiles/mineserver.dir/src
 .PHONY : CMakeFiles/mineserver.dir/src/tree.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/tree.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/tree.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/tree.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/mcregion.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/mcregion.cpp.o: src/mcregion.cpp
@@ -596,7 +577,6 @@ CMakeFiles/mineserver.dir/src/mcregion.cpp.o.provides: CMakeFiles/mineserver.dir
 .PHONY : CMakeFiles/mineserver.dir/src/mcregion.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/mcregion.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/mcregion.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/mcregion.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/worldgen/cavegen.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/worldgen/cavegen.cpp.o: src/worldgen/cavegen.cpp
@@ -620,7 +600,6 @@ CMakeFiles/mineserver.dir/src/worldgen/cavegen.cpp.o.provides: CMakeFiles/minese
 .PHONY : CMakeFiles/mineserver.dir/src/worldgen/cavegen.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/worldgen/cavegen.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/worldgen/cavegen.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/worldgen/cavegen.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/worldgen/heavengen.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/worldgen/heavengen.cpp.o: src/worldgen/heavengen.cpp
@@ -644,7 +623,6 @@ CMakeFiles/mineserver.dir/src/worldgen/heavengen.cpp.o.provides: CMakeFiles/mine
 .PHONY : CMakeFiles/mineserver.dir/src/worldgen/heavengen.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/worldgen/heavengen.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/worldgen/heavengen.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/worldgen/heavengen.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/worldgen/mapgen.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/worldgen/mapgen.cpp.o: src/worldgen/mapgen.cpp
@@ -668,7 +646,6 @@ CMakeFiles/mineserver.dir/src/worldgen/mapgen.cpp.o.provides: CMakeFiles/mineser
 .PHONY : CMakeFiles/mineserver.dir/src/worldgen/mapgen.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/worldgen/mapgen.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/worldgen/mapgen.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/worldgen/mapgen.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/worldgen/nethergen.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/worldgen/nethergen.cpp.o: src/worldgen/nethergen.cpp
@@ -692,7 +669,6 @@ CMakeFiles/mineserver.dir/src/worldgen/nethergen.cpp.o.provides: CMakeFiles/mine
 .PHONY : CMakeFiles/mineserver.dir/src/worldgen/nethergen.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/worldgen/nethergen.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/worldgen/nethergen.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/worldgen/nethergen.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/worldgen/biomegen.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/worldgen/biomegen.cpp.o: src/worldgen/biomegen.cpp
@@ -716,7 +692,6 @@ CMakeFiles/mineserver.dir/src/worldgen/biomegen.cpp.o.provides: CMakeFiles/mines
 .PHONY : CMakeFiles/mineserver.dir/src/worldgen/biomegen.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/worldgen/biomegen.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/worldgen/biomegen.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/worldgen/biomegen.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/worldgen/eximgen.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/worldgen/eximgen.cpp.o: src/worldgen/eximgen.cpp
@@ -740,7 +715,6 @@ CMakeFiles/mineserver.dir/src/worldgen/eximgen.cpp.o.provides: CMakeFiles/minese
 .PHONY : CMakeFiles/mineserver.dir/src/worldgen/eximgen.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/worldgen/eximgen.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/worldgen/eximgen.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/worldgen/eximgen.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/cake.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/cake.cpp.o: src/blocks/cake.cpp
@@ -764,7 +738,6 @@ CMakeFiles/mineserver.dir/src/blocks/cake.cpp.o.provides: CMakeFiles/mineserver.
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/cake.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/cake.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/cake.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/cake.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/stair.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/stair.cpp.o: src/blocks/stair.cpp
@@ -788,7 +761,6 @@ CMakeFiles/mineserver.dir/src/blocks/stair.cpp.o.provides: CMakeFiles/mineserver
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/stair.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/stair.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/stair.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/stair.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/chest.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/chest.cpp.o: src/blocks/chest.cpp
@@ -812,7 +784,6 @@ CMakeFiles/mineserver.dir/src/blocks/chest.cpp.o.provides: CMakeFiles/mineserver
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/chest.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/chest.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/chest.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/chest.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/snow.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/snow.cpp.o: src/blocks/snow.cpp
@@ -836,7 +807,6 @@ CMakeFiles/mineserver.dir/src/blocks/snow.cpp.o.provides: CMakeFiles/mineserver.
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/snow.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/snow.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/snow.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/snow.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/fire.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/fire.cpp.o: src/blocks/fire.cpp
@@ -860,7 +830,6 @@ CMakeFiles/mineserver.dir/src/blocks/fire.cpp.o.provides: CMakeFiles/mineserver.
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/fire.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/fire.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/fire.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/fire.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/default.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/default.cpp.o: src/blocks/default.cpp
@@ -884,7 +853,6 @@ CMakeFiles/mineserver.dir/src/blocks/default.cpp.o.provides: CMakeFiles/mineserv
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/default.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/default.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/default.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/default.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/plant.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/plant.cpp.o: src/blocks/plant.cpp
@@ -908,7 +876,6 @@ CMakeFiles/mineserver.dir/src/blocks/plant.cpp.o.provides: CMakeFiles/mineserver
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/plant.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/plant.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/plant.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/plant.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/sign.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/sign.cpp.o: src/blocks/sign.cpp
@@ -932,7 +899,6 @@ CMakeFiles/mineserver.dir/src/blocks/sign.cpp.o.provides: CMakeFiles/mineserver.
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/sign.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/sign.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/sign.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/sign.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/door.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/door.cpp.o: src/blocks/door.cpp
@@ -956,7 +922,6 @@ CMakeFiles/mineserver.dir/src/blocks/door.cpp.o.provides: CMakeFiles/mineserver.
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/door.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/door.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/door.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/door.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/ladder.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/ladder.cpp.o: src/blocks/ladder.cpp
@@ -980,7 +945,6 @@ CMakeFiles/mineserver.dir/src/blocks/ladder.cpp.o.provides: CMakeFiles/mineserve
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/ladder.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/ladder.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/ladder.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/ladder.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/torch.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/torch.cpp.o: src/blocks/torch.cpp
@@ -1004,7 +968,6 @@ CMakeFiles/mineserver.dir/src/blocks/torch.cpp.o.provides: CMakeFiles/mineserver
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/torch.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/torch.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/torch.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/torch.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/basic.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/basic.cpp.o: src/blocks/basic.cpp
@@ -1028,7 +991,6 @@ CMakeFiles/mineserver.dir/src/blocks/basic.cpp.o.provides: CMakeFiles/mineserver
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/basic.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/basic.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/basic.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/basic.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/tracks.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/tracks.cpp.o: src/blocks/tracks.cpp
@@ -1052,7 +1014,6 @@ CMakeFiles/mineserver.dir/src/blocks/tracks.cpp.o.provides: CMakeFiles/mineserve
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/tracks.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/tracks.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/tracks.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/tracks.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/falling.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/falling.cpp.o: src/blocks/falling.cpp
@@ -1076,7 +1037,6 @@ CMakeFiles/mineserver.dir/src/blocks/falling.cpp.o.provides: CMakeFiles/mineserv
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/falling.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/falling.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/falling.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/falling.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/liquid.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/liquid.cpp.o: src/blocks/liquid.cpp
@@ -1100,7 +1060,6 @@ CMakeFiles/mineserver.dir/src/blocks/liquid.cpp.o.provides: CMakeFiles/mineserve
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/liquid.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/liquid.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/liquid.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/liquid.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/redstone.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/redstone.cpp.o: src/blocks/redstone.cpp
@@ -1124,7 +1083,6 @@ CMakeFiles/mineserver.dir/src/blocks/redstone.cpp.o.provides: CMakeFiles/mineser
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/redstone.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/redstone.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/redstone.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/redstone.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/leaves.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/leaves.cpp.o: src/blocks/leaves.cpp
@@ -1148,7 +1106,6 @@ CMakeFiles/mineserver.dir/src/blocks/leaves.cpp.o.provides: CMakeFiles/mineserve
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/leaves.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/leaves.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/leaves.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/leaves.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/tools.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/tools.cpp.o: src/tools.cpp
@@ -1172,7 +1129,6 @@ CMakeFiles/mineserver.dir/src/tools.cpp.o.provides: CMakeFiles/mineserver.dir/sr
 .PHONY : CMakeFiles/mineserver.dir/src/tools.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/tools.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/tools.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/tools.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/physics.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/physics.cpp.o: src/physics.cpp
@@ -1196,7 +1152,6 @@ CMakeFiles/mineserver.dir/src/physics.cpp.o.provides: CMakeFiles/mineserver.dir/
 .PHONY : CMakeFiles/mineserver.dir/src/physics.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/physics.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/physics.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/physics.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/cliScreen.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/cliScreen.cpp.o: src/cliScreen.cpp
@@ -1220,7 +1175,6 @@ CMakeFiles/mineserver.dir/src/cliScreen.cpp.o.provides: CMakeFiles/mineserver.di
 .PHONY : CMakeFiles/mineserver.dir/src/cliScreen.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/cliScreen.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/cliScreen.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/cliScreen.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/blockfurnace.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/blockfurnace.cpp.o: src/blocks/blockfurnace.cpp
@@ -1244,7 +1198,6 @@ CMakeFiles/mineserver.dir/src/blocks/blockfurnace.cpp.o.provides: CMakeFiles/min
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/blockfurnace.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/blockfurnace.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/blockfurnace.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/blockfurnace.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/note.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/note.cpp.o: src/blocks/note.cpp
@@ -1268,7 +1221,6 @@ CMakeFiles/mineserver.dir/src/blocks/note.cpp.o.provides: CMakeFiles/mineserver.
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/note.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/note.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/note.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/note.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/workbench.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/workbench.cpp.o: src/blocks/workbench.cpp
@@ -1292,7 +1244,6 @@ CMakeFiles/mineserver.dir/src/blocks/workbench.cpp.o.provides: CMakeFiles/minese
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/workbench.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/workbench.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/workbench.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/workbench.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/pumpkin.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/pumpkin.cpp.o: src/blocks/pumpkin.cpp
@@ -1316,7 +1267,6 @@ CMakeFiles/mineserver.dir/src/blocks/pumpkin.cpp.o.provides: CMakeFiles/mineserv
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/pumpkin.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/pumpkin.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/pumpkin.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/pumpkin.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/bed.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/bed.cpp.o: src/blocks/bed.cpp
@@ -1340,7 +1290,6 @@ CMakeFiles/mineserver.dir/src/blocks/bed.cpp.o.provides: CMakeFiles/mineserver.d
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/bed.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/bed.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/bed.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/bed.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/step.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/step.cpp.o: src/blocks/step.cpp
@@ -1364,7 +1313,6 @@ CMakeFiles/mineserver.dir/src/blocks/step.cpp.o.provides: CMakeFiles/mineserver.
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/step.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/step.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/step.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/step.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/tnt.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/tnt.cpp.o: src/blocks/tnt.cpp
@@ -1388,7 +1336,6 @@ CMakeFiles/mineserver.dir/src/blocks/tnt.cpp.o.provides: CMakeFiles/mineserver.d
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/tnt.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/tnt.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/tnt.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/tnt.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/jackolantern.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/jackolantern.cpp.o: src/blocks/jackolantern.cpp
@@ -1412,7 +1359,6 @@ CMakeFiles/mineserver.dir/src/blocks/jackolantern.cpp.o.provides: CMakeFiles/min
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/jackolantern.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/jackolantern.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/jackolantern.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/jackolantern.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/wool.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/wool.cpp.o: src/blocks/wool.cpp
@@ -1436,7 +1382,6 @@ CMakeFiles/mineserver.dir/src/blocks/wool.cpp.o.provides: CMakeFiles/mineserver.
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/wool.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/wool.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/wool.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/wool.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/wood.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/wood.cpp.o: src/blocks/wood.cpp
@@ -1460,7 +1405,6 @@ CMakeFiles/mineserver.dir/src/blocks/wood.cpp.o.provides: CMakeFiles/mineserver.
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/wood.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/wood.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/wood.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/wood.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/blocks/ice.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/blocks/ice.cpp.o: src/blocks/ice.cpp
@@ -1484,7 +1428,6 @@ CMakeFiles/mineserver.dir/src/blocks/ice.cpp.o.provides: CMakeFiles/mineserver.d
 .PHONY : CMakeFiles/mineserver.dir/src/blocks/ice.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/blocks/ice.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/blocks/ice.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/blocks/ice.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/items/food.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/items/food.cpp.o: src/items/food.cpp
@@ -1508,7 +1451,6 @@ CMakeFiles/mineserver.dir/src/items/food.cpp.o.provides: CMakeFiles/mineserver.d
 .PHONY : CMakeFiles/mineserver.dir/src/items/food.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/items/food.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/items/food.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/items/food.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/items/itembasic.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/items/itembasic.cpp.o: src/items/itembasic.cpp
@@ -1532,7 +1474,6 @@ CMakeFiles/mineserver.dir/src/items/itembasic.cpp.o.provides: CMakeFiles/mineser
 .PHONY : CMakeFiles/mineserver.dir/src/items/itembasic.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/items/itembasic.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/items/itembasic.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/items/itembasic.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/items/projectile.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/items/projectile.cpp.o: src/items/projectile.cpp
@@ -1556,7 +1497,6 @@ CMakeFiles/mineserver.dir/src/items/projectile.cpp.o.provides: CMakeFiles/minese
 .PHONY : CMakeFiles/mineserver.dir/src/items/projectile.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/items/projectile.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/items/projectile.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/items/projectile.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/mob.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/mob.cpp.o: src/mob.cpp
@@ -1580,7 +1520,6 @@ CMakeFiles/mineserver.dir/src/mob.cpp.o.provides: CMakeFiles/mineserver.dir/src/
 .PHONY : CMakeFiles/mineserver.dir/src/mob.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/mob.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/mob.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/mob.cpp.o.provides.build
 
 CMakeFiles/mineserver.dir/src/metadata.cpp.o: CMakeFiles/mineserver.dir/flags.make
 CMakeFiles/mineserver.dir/src/metadata.cpp.o: src/metadata.cpp
@@ -1604,7 +1543,6 @@ CMakeFiles/mineserver.dir/src/metadata.cpp.o.provides: CMakeFiles/mineserver.dir
 .PHONY : CMakeFiles/mineserver.dir/src/metadata.cpp.o.provides
 
 CMakeFiles/mineserver.dir/src/metadata.cpp.o.provides.build: CMakeFiles/mineserver.dir/src/metadata.cpp.o
-.PHONY : CMakeFiles/mineserver.dir/src/metadata.cpp.o.provides.build
 
 # Object files for target mineserver
 mineserver_OBJECTS = \
